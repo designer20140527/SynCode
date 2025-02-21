@@ -196,28 +196,59 @@ p {
 
 @media (max-width: 1024px) {
     .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 2rem 4rem;
         flex-direction: column;
-        align-items: center;
         text-align: center;
-        gap: 4rem;
-        padding-top: 4rem;
+        gap: 3rem;
     }
     
     .hero-left, .hero-right {
         width: 100%;
+        max-width: 100%;
         padding: 0;
+        align-items: center;
+        text-align: center;
     }
     
     .hero-right {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-right p {
+        max-width: 600px;
+        margin: 0 auto;
     }
     
     h1 {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
     }
     
     p {
         text-align: center;
+    }
+
+    .video-background {
+        height: 100vh;
+    }
+
+    .video-background video {
+        height: 100vh;
+    }
+
+    .video-overlay {
+        height: 100vh;
+    }
+
+    .features {
+        position: relative;
+        z-index: 2;
+        margin-top: -2rem;
+        background-color: #040507;
     }
 }
 
@@ -454,13 +485,12 @@ p {
 
 @media (max-width: 1024px) {
     .about-content {
-        flex-direction: column-reverse;
-        gap: 4rem;
-        text-align: center;
+        flex-direction: column;
+        gap: 3rem;
     }
 
     .about-text h2 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .about-text p {
@@ -684,10 +714,12 @@ p {
 @media (max-width: 1024px) {
     .why-choose-content {
         flex-direction: column;
+        gap: 3rem;
     }
 
     .content-left {
         text-align: center;
+        align-items: center;
     }
 
     .learn-more-button {
@@ -695,7 +727,7 @@ p {
     }
 
     .benefits-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -748,6 +780,7 @@ p {
 @media (max-width: 1024px) {
     .tokenomics-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 
@@ -876,22 +909,34 @@ p {
 
 @media (max-width: 768px) {
     .cta {
-        margin: 4rem auto;
-        padding: 4rem 1rem;
+        width: 100vw;
+        margin-left: -50vw;
+        left: 50%;
+        padding: 3rem 1rem;
+        overflow: hidden; /* 防止溢出 */
+    }
+
+    .cta-content {
+        width: 100%;
+        max-width: calc(100% - 2rem); /* 确保内容不会溢出 */
+        margin: 0 auto;
     }
 
     .cta h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cta p {
+        width: 100%;
+        padding: 0;
     }
 
     .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-button {
         width: 100%;
-        justify-content: center;
+        padding: 0;
     }
 }
 
@@ -992,16 +1037,16 @@ p {
 
 @media (max-width: 768px) {
     .faq-header h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .accordion-button {
-        font-size: 1.1rem;
-        padding: 1.25rem 1.5rem;
+        padding: 1.2rem;
+        font-size: 1rem;
     }
 
     .accordion-content {
-        padding: 0 1.5rem 1.25rem;
+        padding: 0 1.2rem 1.2rem;
     }
 }
 
@@ -1241,4 +1286,301 @@ button:hover::after, .social-button:hover::after {
 /* Logo动画 */
 .logo:hover img {
     transform: rotate(360deg);
+}
+
+/* Tablet (iPad) Styles */
+@media (max-width: 1024px) {
+    /* 调整通用间距 */
+    .features, .about, .why-choose, .tokenomics, .cta, .faq {
+        padding: 4rem 2rem;
+    }
+
+    /* Hero section */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 2rem 4rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-left, .hero-right {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-right p {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    /* Features section */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .features-header h2 {
+        font-size: 2.8rem;
+    }
+
+    /* About section */
+    .about-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .about-text h2 {
+        font-size: 2.8rem;
+    }
+
+    /* Why Choose section */
+    .why-choose-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .content-left {
+        text-align: center;
+        align-items: center;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Tokenomics section */
+    .tokenomics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* 调整通用间距 */
+    .features, .about, .why-choose, .tokenomics, .cta, .faq {
+        padding: 3rem 1rem;
+    }
+
+    /* Hero section */
+    .hero {
+        padding: 100px 1rem 3rem;
+        width: 100%;
+    }
+
+    .hero-left {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* 确保h1居中 */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        width: 100%;
+        text-align: center;
+        margin: 0; /* 移除可能的margin */
+    }
+
+    /* About section */
+    .about-content {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: left; /* 改为左对齐 */
+    }
+
+    .about-text {
+        align-items: flex-start; /* 内容左对齐 */
+        text-align: left;
+    }
+
+    /* CTA section */
+    .cta {
+        width: 100vw;
+        margin-left: -50vw;
+        left: 50%;
+        padding: 3rem 1rem;
+        overflow: hidden; /* 防止溢出 */
+    }
+
+    .cta-content {
+        width: 100%;
+        max-width: calc(100% - 2rem); /* 确保内容不会溢出 */
+        margin: 0 auto;
+    }
+
+    .cta h2 {
+        font-size: 2.2rem;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cta p {
+        width: 100%;
+        padding: 0;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Features section */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-header h2 {
+        font-size: 2.2rem;
+        padding: 0 1rem;
+    }
+
+    /* About section */
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+
+    /* Benefits section */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        padding: 1.5rem;
+    }
+
+    /* Tokenomics section */
+    .tokenomics {
+        width: 100%;
+        padding: 3rem 1rem;
+        overflow: hidden;
+    }
+
+    .tokenomics-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .token-card {
+        width: 100%;
+    }
+
+    /* FAQ section */
+    .faq-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .accordion-button {
+        padding: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .accordion-content {
+        height: 0;
+        padding: 0 1.2rem;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .accordion-content.active {
+        height: auto;
+        opacity: 1;
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .accordion-item {
+        overflow: hidden;
+    }
+
+    /* Hero section 修复 */
+    .hero-right {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-right p {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 1rem;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .logo span {
+        font-size: 1.2rem;
+    }
+
+    .try-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* 较小的手机屏幕 */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero-right p {
+        font-size: 1rem;
+    }
+
+    .feature-card, .benefit-card {
+        padding: 1.2rem;
+    }
+
+    .feature-icon, .benefit-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+
+    .feature-card h4, .benefit-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .feature-card p, .benefit-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 处理横屏模式 */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 2rem 4rem;
+    }
+
+    .video-background, .video-overlay {
+        height: 100%;
+    }
 }
